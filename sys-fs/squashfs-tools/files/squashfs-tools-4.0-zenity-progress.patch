@@ -1,0 +1,180 @@
+diff -u --recursive squashfs4.2/squashfs-tools/mksquashfs.c squashfs4.2_zenity/squashfs-tools/mksquashfs.c
+--- squashfs4.2/squashfs-tools/mksquashfs.c	2011-02-28 23:24:09.000000000 +0100
++++ squashfs4.2_zenity/squashfs-tools/mksquashfs.c	2012-05-31 00:19:10.082356141 +0200
+@@ -127,11 +127,13 @@
+ long long global_uid = -1, global_gid = -1;
+ int exportable = TRUE;
+ int progress = TRUE;
++int zenity = FALSE;
+ int progress_enabled = FALSE;
+ int sparse_files = TRUE;
+ int old_exclude = TRUE;
+ int use_regex = FALSE;
+ int first_freelist = TRUE;
++int current_percent,previous_percent=0;
+ 
+ /* superblock attributes */
+ int block_size = SQUASHFS_FILE_SIZE, block_log;
+@@ -2778,19 +2780,25 @@
+ 			return;
+ 		previous = current;
+ 	}
++	if (!zenity) {
++		printf("\r[");
+ 
+-	printf("\r[");
++		while (hashes --)
++			putchar('=');
+ 
+-	while (hashes --)
+-		putchar('=');
++		putchar(rotate_list[rotate]);
+ 
+-	putchar(rotate_list[rotate]);
+-
+-	while(spaces --)
+-		putchar(' ');
+-
+-	printf("] %*lld/%*lld", max_digits, current, max_digits, max);
+-	printf(" %3lld%%", current * 100 / max);
++		while(spaces --)
++			putchar(' ');
++
++		printf("] %*lld/%*lld", max_digits, current, max_digits, max);
++		printf(" %3lld%%", current * 100 / max);
++	}	else {
++			current_percent = current * 100 / max;
++			if (current_percent != previous_percent)
++					printf("%d%%\n", current_percent); 
++				previous_percent = current_percent;
++	}		
+ 	fflush(stdout);
+ }
+ 
+@@ -4115,7 +4123,7 @@
+ 	}
+ 
+ 	printf("Parallel mksquashfs: Using %d processor%s\n", processors,
+-			processors == 1 ? "" : "s");
++				processors == 1 ? "" : "s");
+ 
+ 	if(sigprocmask(SIG_SETMASK, &old_mask, NULL) == -1)
+ 		BAD_ERROR("Failed to set signal mask in intialise_threads\n");
+@@ -4650,6 +4658,9 @@
+ 			sparse_files = FALSE;
+ 		else if(strcmp(argv[i], "-no-progress") == 0)
+ 			progress = FALSE;
++		else if(strcmp(argv[i], "-zenity-progress") == 0 ||
++				strcmp(argv[i], "-z") == 0)
++			zenity = TRUE;
+ 		else if(strcmp(argv[i], "-no-exports") == 0)
+ 			exportable = FALSE;
+ 		else if(strcmp(argv[i], "-processors") == 0) {
+@@ -4914,6 +4925,8 @@
+ 			ERROR("-info\t\t\tprint files written to filesystem\n");
+ 			ERROR("-no-progress\t\tdon't display the progress "
+ 				"bar\n");
++			ERROR("-z[enity-progress]\toutput formated for use with "
++				"\"zenity --progress\"\n");
+ 			ERROR("-processors <number>\tUse <number> processors."
+ 				"  By default will use number of\n");
+ 			ERROR("\t\t\tprocessors available\n");
+diff -u --recursive squashfs4.2/squashfs-tools/unsquashfs.c squashfs4.2_zenity/squashfs-tools/unsquashfs.c
+--- squashfs4.2/squashfs-tools/unsquashfs.c	2011-02-28 23:27:06.000000000 +0100
++++ squashfs4.2_zenity/squashfs-tools/unsquashfs.c	2012-05-31 00:19:59.359740089 +0200
+@@ -64,12 +64,12 @@
+ int rotate = 0;
+ pthread_mutex_t	screen_mutex;
+ pthread_cond_t progress_wait;
+-int progress = TRUE, progress_enabled = FALSE;
++int progress = TRUE, progress_enabled = FALSE;int zenity = FALSE;
+ unsigned int total_blocks = 0, total_files = 0, total_inodes = 0;
+ unsigned int cur_blocks = 0;
+ int inode_number = 1;
+ int no_xattrs = XATTR_DEF;
+-
++int current_percent,previous_percent=0;
+ int lookup_type[] = {
+ 	0,
+ 	S_IFDIR,
+@@ -1852,7 +1852,7 @@
+ 				 0)
+ 			EXIT_UNSQUASH("Failed to create thread\n");
+ 	}
+-
++	
+ 	printf("Parallel unsquashfs: Using %d processor%s\n", processors,
+ 			processors == 1 ? "" : "s");
+ 
+@@ -1891,7 +1891,7 @@
+ 	char rotate_list[] = { '|', '/', '-', '\\' };
+ 	int max_digits, used, hashes, spaces;
+ 	static int tty = -1;
+-
++	
+ 	if(max == 0)
+ 		return;
+ 
+@@ -1919,19 +1919,25 @@
+ 			return;
+ 		previous = current;
+ 	}
++	if (!zenity) {
++		printf("\r[");
+ 
+-	printf("\r[");
+-
+-	while (hashes --)
+-		putchar('=');
++		while (hashes --)
++			putchar('=');
+ 
+-	putchar(rotate_list[rotate]);
++		putchar(rotate_list[rotate]);
+ 
+-	while(spaces --)
+-		putchar(' ');
+-
+-	printf("] %*lld/%*lld", max_digits, current, max_digits, max);
+-	printf(" %3lld%%", current * 100 / max);
++		while(spaces --)
++			putchar(' ');
++
++		printf("] %*lld/%*lld", max_digits, current, max_digits, max);
++		printf(" %3lld%%", current * 100 / max);
++	}	else {
++			current_percent = current * 100 / max;
++			if (current_percent != previous_percent)
++					printf("%d%%\n", current_percent); 
++				previous_percent = current_percent;
++	}		
+ 	fflush(stdout);
+ }
+ 
+@@ -1986,6 +1992,9 @@
+ 		else if(strcmp(argv[i], "-no-progress") == 0 ||
+ 				strcmp(argv[i], "-n") == 0)
+ 			progress = FALSE;
++		else if(strcmp(argv[i], "-zenity-progress") == 0 ||
++				strcmp(argv[i], "-z") == 0)
++			zenity = TRUE;
+ 		else if(strcmp(argv[i], "-no-xattrs") == 0 ||
+ 				strcmp(argv[i], "-no") == 0)
+ 			no_xattrs = TRUE;
+@@ -2089,6 +2098,8 @@
+ 				"default \"squashfs-root\"\n");
+ 			ERROR("\t-n[o-progress]\t\tdon't display the progress "
+ 				"bar\n");
++			ERROR("\t-z[enity-progress]\toutput formated for use with "
++				"\"zenity --progress\"\n");				
+ 			ERROR("\t-no[-xattrs]\t\tdon't extract xattrs in file system"
+ 				NOXOPT_STR"\n");
+ 			ERROR("\t-x[attrs]\t\textract xattrs in file system"
+@@ -2206,7 +2217,6 @@
+ 
+ 	memset(created_inode, 0, sBlk.s.inodes * sizeof(char *));
+ 	inode_number = 1;
+-
+ 	printf("%d inodes (%d blocks) to write\n\n", total_inodes,
+ 		total_inodes - total_files + total_blocks);
+ 
