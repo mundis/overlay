@@ -20,6 +20,16 @@ then you can now add the overlay using `layman -a mundis`
 Patched ebuild that works for Frontend for DOOM engine doomsday
 </td></tr>
 <tr><td style="font-size:70%;">
+<a href=https://github.com/mundis/overlay/tree/master/net-libs/libktorrent/libktorrent-1.1.3.ebuild>net-libs/libktorrent/libktorrent-1.1.3.ebuild</a>
+</td><td style="font-size:70%;">
+A BitTorrent library based on KDE Platform
+</td></tr>
+<tr><td style="font-size:70%;">
+<a href=https://github.com/mundis/overlay/tree/master/net-p2p/ktorrent/ktorrent-4.1.3.ebuild>net-p2p/ktorrent/ktorrent-4.1.3.ebuild</a>
+</td><td style="font-size:70%;">
+A BitTorrent program for KDE.
+</td></tr>
+<tr><td style="font-size:70%;">
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename/H2rename-9999.ebuild>sys-apps/H2rename/H2rename-9999.ebuild</a>
 </td><td style="font-size:70%;">
 H2rename is especially developed to repair/rename broken charakters so called umlauts
