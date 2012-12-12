@@ -9,7 +9,7 @@ overlays  :     http://www.gentoo.org/proj/en/overlays/repositories.xml
 Now you can test if it works with `layman -L | grep mundis`  
 If your output is:
 `* mundis                    [Git       ] (git://github.com/mundis/overlay.git  )`  
-then you can now add the overlay using `layman -a mundis`
+now you can add the overlay using `layman -a mundis`
 
 #### All ebuilds into the overlay:  
 
