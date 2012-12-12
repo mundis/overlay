@@ -11,9 +11,9 @@ If your output is:
 `* mundis                    [Git       ] (git://github.com/mundis/overlay.git  )`  
 then you can add the overlay using `layman -a mundis`
 
-#### All ebuilds into the overlay:  
+###### All ebuilds into the overlay:  
 
-<table><FONT SIZE="6">
+<table>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-embedded/cc65/cc65-2.13.3.ebuild>dev-embedded/cc65/cc65-2.13.3</a>
 </td><td>
@@ -54,4 +54,4 @@ H2rename is especially developed to repair/rename broken charakters so called um
 </td><td>
 Patched Version of squashfs-tools for use with zenity-progress
 </td></tr>
-</FONT></table>
+</table>
