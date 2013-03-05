@@ -9,7 +9,7 @@ SRC_URI=""
 SLOT="0"
 LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"
-DEPEND="x11-libs/qt-gui"
+DEPEND="dev-qt/qtgui"
 RDEPEND="${DEPEND}"
 src_unpack() {
 	git-2_src_unpack	
