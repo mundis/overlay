@@ -20,6 +20,16 @@ then you can add the overlay using `layman -a mundis`
 A BitTorrent library based on KDE Platform
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/media-video/blackmagic-capture>media-video/blackmagic-capture</a>
+</td><td>
+forked and extended version from original blackmagic-capture cli
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/media-video/blackmagic-SDK>media-video/blackmagic-SDK</a>
+</td><td>
+SDK for development of blackmagic apps
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/media-sound/sox>media-sound/sox</a>
 </td><td>
 The swiss army knife of sound processing programs
