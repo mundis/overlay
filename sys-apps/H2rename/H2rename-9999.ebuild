@@ -16,7 +16,5 @@ src_unpack() {
 }
 
 src_install() {
-        emake DESTDIR="${D}" install || die
-	dodir /usr/bin
-	install -m 755 -o root -g root ${S}/H2rename ${D}/usr/bin
+	dobin ${PN}	
 }
