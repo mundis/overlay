@@ -25,6 +25,11 @@ A BitTorrent library based on KDE Platform
 forked and extended version from original blackmagic-capture cli
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/media-video/blackmagic-drivers>media-video/blackmagic-drivers</a>
+</td><td>
+Blackmagic Software and Driver
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/media-video/blackmagic-SDK>media-video/blackmagic-SDK</a>
 </td><td>
 SDK for development of blackmagic apps
