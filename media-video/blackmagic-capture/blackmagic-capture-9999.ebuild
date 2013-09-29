@@ -11,7 +11,7 @@ LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"
 DEPEND="x11-base/xorg-server
 	media-video/blackmagic-SDK
-	media-video/ffmpeg"
+	virtual/ffmpeg"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
