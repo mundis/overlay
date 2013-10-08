@@ -65,33 +65,8 @@ Patched Version of squashfs-tools for use with zenity-progress
 H2rename is especially developed to repair/rename broken charakters so called umlauts
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/games-fps/unreal-tournament-CTF-Maps-no-deps>games-fps/unreal-tournament-CTF-Maps-no-deps</a>
-</td><td>
-CAPTURE_THE_FLAG Maps that uses no additional files
-</td></tr>
-<tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/games-fps/unreal-tournament-DOM-Maps-no-deps>games-fps/unreal-tournament-DOM-Maps-no-deps</a>
-</td><td>
-DOMINATION Maps that uses no additional files
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/games-fps/gDoomsday>games-fps/gDoomsday</a>
 </td><td>
 Patched ebuild that works for Frontend for DOOM engine doomsday
-</td></tr>
-<tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/games-fps/unreal-tournament-AS-Maps-no-deps>games-fps/unreal-tournament-AS-Maps-no-deps</a>
-</td><td>
-ASSAULT Maps that uses no additional files
-</td></tr>
-<tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/games-fps/unreal-tournament-missing-intfiles-patch>games-fps/unreal-tournament-missing-intfiles-patch</a>
-</td><td>
-Add Missing INT Files for Relics usw(Not needed for goty)
-</td></tr>
-<tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/games-fps/unreal-tournament-chaosut>games-fps/unreal-tournament-chaosut</a>
-</td><td>
-ChaosUT Mod for UT99
 </td></tr>
 </table>
