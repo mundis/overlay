@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+  <name>mundis</name>
+  <owner>
+      <email>tuxracer@hispeed.ch</email>
+  </owner>
+  <description>small overlay for gentoo users with something useful</description>
+  <source type="git">git://github.com/mundis/overlay.git</source>
+  </repo>
+</repositories>
