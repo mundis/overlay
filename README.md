@@ -1,15 +1,7 @@
 Adding the overlay
 ------------------
-To add this overlay to your system add the URL      
-https://github.com/downloads/mundis/overlay/mundis.xml
-to your `/etc/layman/layman.cfg`  
-You have to add it below the line  
-overlays  :     http://www.gentoo.org/proj/en/overlays/repositories.xml
-
-Now you can test if it works with `layman -L | grep mundis`  
-If your output is:
-`* mundis                    [Git       ] (git://github.com/mundis/overlay.git  )`  
-then you can add the overlay using `layman -a mundis`
+To add this overlay to your system use this command:
+`layman -f -o https://raw.github.com/mundis/overlay/master/mundis.xml -a mundis`
 
 ##### All ebuilds into the overlay:  
 
