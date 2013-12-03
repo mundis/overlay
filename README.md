@@ -1,6 +1,6 @@
 Adding the overlay
 ------------------
-To add this overlay to your system:
+To add this overlay to your system: 
 uncomment the line `# overlay_defs : /etc/layman/overlays`
 to `overlay_defs : /etc/layman/overlays`
 use `wget -P /etc/layman/overlays/ https://raw.github.com/mundis/overlay/master/mundis.xml`
