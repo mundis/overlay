@@ -48,6 +48,11 @@ Patched Version of squashfs-tools for use with zenity-progress
 H2rename is especially developed to repair/rename broken charakters so called umlauts
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/net-misc/x2goserver>net-misc/x2goserver</a>
+</td><td>
+The X2Go server
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-util/waf>dev-util/waf</a>
 </td><td>
 The flexible build system
