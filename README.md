@@ -43,6 +43,16 @@ It's a complete cross development package for 65(C)02 systems.
 Patched Version of squashfs-tools for use with zenity-progress
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-block/drbl>sys-block/drbl</a>
+</td><td>
+DRBL (Diskless Remote Boot in Linux) is free software, open source solution to managing the deployment of the GNU/Linux operating system across many clients
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-block/clonezilla>sys-block/clonezilla</a>
+</td><td>
+Clonezilla is a partition and disk imaging/cloning program similar to True Image® or Norton Ghost®
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
 </td><td>
 H2rename is especially developed to repair/rename broken charakters so called umlauts
