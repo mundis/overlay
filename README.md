@@ -38,6 +38,11 @@ Open-source PHP5 professional web framework
 It's a complete cross development package for 65(C)02 systems.
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/app-crypt/chntpw>app-crypt/chntpw</a>
+</td><td>
+Offline Windows NT Password & Registry Editor
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-fs/squashfs-tools>sys-fs/squashfs-tools</a>
 </td><td>
 Patched Version of squashfs-tools for use with zenity-progress
