@@ -20,7 +20,7 @@ The flexible build system
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-libs/mjsulib>dev-libs/mjsulib</a>
 </td><td>
-
+library for slap 'Smart Label Printer'
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-block/clonezilla>sys-block/clonezilla</a>

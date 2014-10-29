@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-DESCRIPTION=""
+DESCRIPTION="library for slap 'Smart Label Printer'"
 SRC_URI="https://github.com/mundis/slap/raw/master/original/${PN}-${PV}.tar.gz"
 
 SLOT="0"
