@@ -14,10 +14,10 @@ KEYWORDS="amd64 ppc x86"
 IUSE="crypt dc3dd"
 
 # coreutils are needed for /usr/bin/split binary
-COMMON_DEPEND="userland_GNU? ( sys-apps/coreutils )"
+COMMON_DEPEND="userland_GNU? ( sys-apps/coreutils )
+		dc3dd? ( <sys-apps/dc3dd-7.0 )"
 
 DEPEND="${COMMON_DEPEND}
-	dc3dd? ( <sys-apps/dc3dd-7.0 )
 	>=dev-perl/perl-tk-804.27.0
 	userland_GNU? ( app-arch/sharutils )"
 
