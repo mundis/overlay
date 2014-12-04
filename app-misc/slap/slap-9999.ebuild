@@ -9,7 +9,7 @@ EGIT_REPO_URI="https://github.com/mundis/slap.git"
 inherit git-2
 SLOT="0"
 LICENSE="GPL"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 DEPEND="dev-libs/mjsulib"
 RDEPEND="${DEPEND}"
 

@@ -11,7 +11,7 @@ inherit git-2
 
 SLOT="0"
 LICENSE="GPL"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS=""
 DEPEND="sys-apps/man-db"
 RDEPEND="${DEPEND}"
 
