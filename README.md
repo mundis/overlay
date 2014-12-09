@@ -88,9 +88,14 @@ SDK for development of blackmagic apps
 forked and extended version from original blackmagic-capture cli
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-block/clonezilla>sys-block/clonezilla</a>
+<a href=https://github.com/mundis/overlay/tree/master/sys-fs/aufs-headers>sys-fs/aufs-headers</a>
 </td><td>
 Patched Version of squashfs-tools for use with zenity-progress
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-block/clonezilla>sys-block/clonezilla</a>
+</td><td>
+User space headers for aufs3
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-block/drbl>sys-block/drbl</a>
