@@ -8,6 +8,8 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 K_GENPATCHES_VER="49"
 K_DEBLOB_AVAILABLE="1"
+GENPATCHES_URI="http://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.4-49.base.tar.xz"
+GENPATCHES_URI="${GENPATCHES_URI} http://dev.gentoo.org/~mpagano/genpatches/tarballs/genpatches-3.4-49.extras.tar.xz"
 inherit kernel-2 eutils
 detect_version
 detect_arch
@@ -26,7 +28,7 @@ SRC_URI="
 	${KERNEL_URI}
 	${ARCH_URI}
 	${AUFS_URI}
-	!vanilla? ( http://dev.gentoo.org/~mpagano/genpatches/patches-3.4-49.htm )
+	!vanilla? ( ${GENPATCHES_URI} )
 	"
 
 PDEPEND=">=sys-fs/aufs-util-3.2"
