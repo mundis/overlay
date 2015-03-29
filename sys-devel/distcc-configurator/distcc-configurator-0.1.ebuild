@@ -16,4 +16,5 @@ S=${WORKDIR}
 src_install() {
 	doinitd ${DISTDIR}/distcc-configurator
 	dobin ${DISTDIR}/listener
+	doman ${DISTDIR}/*.man
 }
