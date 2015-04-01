@@ -10,7 +10,10 @@ SRC_URI="https://raw.githubusercontent.com/mundis/scripts/master/distcc-configur
 SLOT="0"
 LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"
-DEPEND="sys-devel/distcc"
+DEPEND="sys-devel/distcc
+        net-misc/ipcalc
+        net-analyzer/netcat
+        net-analyzer/nmap"
 RDEPEND="${DEPEND}"
 S=${WORKDIR}
 
