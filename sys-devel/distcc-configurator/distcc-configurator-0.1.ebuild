@@ -5,7 +5,8 @@ EAPI=5
 DESCRIPTION="distcc-configurator is a scripted autoconfiguration for distccd"
 
 SRC_URI="https://raw.githubusercontent.com/mundis/scripts/master/distcc-configurator/distcc-configurator
-				 https://raw.githubusercontent.com/mundis/scripts/master/distcc-configurator/listener"
+				 https://raw.githubusercontent.com/mundis/scripts/master/distcc-configurator/listener
+				 https://raw.githubusercontent.com/mundis/scripts/master/distcc-configurator/distcc-configurator.8"
 SLOT="0"
 LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"
@@ -16,5 +17,5 @@ S=${WORKDIR}
 src_install() {
 	doinitd ${DISTDIR}/distcc-configurator
 	dobin ${DISTDIR}/listener
-	doman ${DISTDIR}/*.man
+	doman ${DISTDIR}/*.8
 }
