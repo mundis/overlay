@@ -88,6 +88,11 @@ Clonezilla is a partition and disk imaging/cloning program similar to True Image
 DRBL (Diskless Remote Boot in Linux) is free software, open source solution to managing the deployment of the GNU/Linux operating system across many clients
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-block/partclone>sys-block/partclone</a>
+</td><td>
+Partition cloning tool
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-devel/distcc-configurator>sys-devel/distcc-configurator</a>
 </td><td>
 distcc-configurator is a scripted autoconfiguration for distccd
