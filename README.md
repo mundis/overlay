@@ -102,4 +102,9 @@ distcc-configurator is a scripted autoconfiguration for distccd
 </td><td>
 Patched Version of squashfs-tools for use with zenity-progress
 </td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-kernel/aufs-sources>sys-kernel/aufs-sources</a>
+</td><td>
+Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and aufs3 support
+</td></tr>
 </table>
