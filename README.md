@@ -18,6 +18,11 @@ and use the following commands
 Offline Windows NT Password & Registry Editor
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/app-emulation/vice>app-emulation/vice</a>
+</td><td>
+The Versatile Commodore 8-bit Emulator
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-forensics/air>app-forensics/air</a>
 </td><td>
 A GUI front-end to dd/dc3dd
