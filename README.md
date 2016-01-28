@@ -73,6 +73,11 @@ Blackmagic Software and Driver
 The X2Go server
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/net-wireless/rtlwifi_new>net-wireless/rtlwifi_new</a>
+</td><td>
+Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
 </td><td>
 H2rename is especially developed to repair/rename broken charakters so called umlauts
