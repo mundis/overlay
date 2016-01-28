@@ -20,8 +20,6 @@ MODULE_NAMES="${MODULE_NAMES} rtl8723ae/rtl8723ae(net-wireless)rtl8723ae rtl8192
 MODULE_NAMES="${MODULE_NAMES} rtl8192c/rtl8192c-common(net-wireless)rtl8192c-common rtl8723be/rtl8723be(net-wireless)rtl8723be rtl8192ee/rtl8192ee(net-wireless)rtl8192ee"
 src_unpack() {
 	git-2_src_unpack
-	echo ${MODULE_NAMES}
-
 }
 
 pkg_setup() {
@@ -30,30 +28,5 @@ pkg_setup() {
 }
 
 src_install() {
-
-	echo -e "\n\n"
-	echo -e "\n\n"
-	find . -name "*.ko"
-	echo -e "\n\n"
-	echo -e "\n\n"
-	echo -e "\n\n"
-
-
         linux-mod_src_install
 }
-
-test() {
-	pwd
-	ls
-	KO_NAMES=(`find . -name "*.ko"`)
-	echo koname ${KO_NAMES[*]}
-MODULE_NAMES="rtlwifi_new(net/wireless/rtlwifi_new)"
-
-	echo -e "\n\n"
-	echo -e "\n\n"
-
-
-
-}
-
-
