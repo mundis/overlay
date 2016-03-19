@@ -164,7 +164,13 @@ src_configure() {
 }
 
 src_install() {
+	BINARIES=(vsid x128 x64 x64dtv x64sc xcbm2 xcbm5x0 xpet xplus4 xscpu64 xvic)
+	DESCRIPTIONS=("Commodore SID Emulator" "Commodore C128" "Commodore C64" "Commodore C64 DTV" "Commodore C64 SC" "Commodore CBM-II" "Commodore CBM-5x0" "Commodore PET" "Commodore Plus/4" "Commodore SuperCPU" "Commodore VIC-20")
 	DOCS="AUTHORS ChangeLog FEEDBACK README" \
 		default
 	prepgamesdirs
+	doicon ${FILESDIR}/Commodore_Icon.png
+	for i in $(seq 0 $((${#BINARIES[*]} -1 )));do
+		make_desktop_entry ${BINARIES[i]} "${DESCRIPTIONS[i]}" Commodore_Icon "Game;Emulator"
+	done
 }
