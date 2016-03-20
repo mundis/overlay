@@ -171,6 +171,6 @@ src_install() {
 	prepgamesdirs
 	doicon ${FILESDIR}/Commodore_Icon.png
 	for i in $(seq 0 $((${#BINARIES[*]} -1 )));do
-		make_desktop_entry ${BINARIES[i]} "${DESCRIPTIONS[i]}" Commodore_Icon "Game;Emulator"
+		make_desktop_entry ${BINARIES[i]} "${DESCRIPTIONS[i]}" Commodore_Icon "Game"
 	done
 }

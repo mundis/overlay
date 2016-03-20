@@ -30,7 +30,7 @@ DESCRIPTIONS=(Commodore SID Emulator Commodore C128 Commodore C64 Commodore C64 
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-misc/slap>app-misc/slap</a>
 </td><td>
-make_desktop_entry ${BINARIES[i]} ${DESCRIPTIONS[i]} Commodore_Icon Game;Emulator
+make_desktop_entry ${BINARIES[i]} ${DESCRIPTIONS[i]} Commodore_Icon Game
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-embedded/cc65>dev-embedded/cc65</a>
