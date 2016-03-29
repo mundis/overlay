@@ -25,7 +25,7 @@ The Versatile Commodore 8-bit Emulator
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-kernel/aufs-sources>sys-kernel/aufs-sources</a>
 </td><td>
-Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and aufs3 support
+Full sources including the Gentoo patchset for kernel 3.14.46 and aufs3 support
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-embedded/cc65>dev-embedded/cc65</a>

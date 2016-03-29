@@ -22,7 +22,7 @@ KEYWORDS="~amd64 ~x86"
 HOMEPAGE="http://dev.gentoo.org/~mpagano/genpatches http://aufs.sourceforge.net/"
 IUSE="deblob experimental module vanilla"
 
-DESCRIPTION="Full sources including the Gentoo patchset for the ${KV_MAJOR}.${KV_MINOR} kernel tree and aufs3 support"
+DESCRIPTION="Full sources including the Gentoo patchset for kernel 3.14.46 and aufs3 support"
 SRC_URI="
 	${KERNEL_URI}
 	${ARCH_URI}
