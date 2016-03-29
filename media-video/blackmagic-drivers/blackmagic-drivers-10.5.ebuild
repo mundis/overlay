@@ -15,6 +15,9 @@ BUILD_TARGETS="all"
 BUILD_TARGET_ARCH="${ARCH}"
 MODULE_NAMES="blackmagic(kernel/drivers/blackmagic:${S})"
 
+src_prepare(){
+	cd ${WORKDIR}
+}
 
 pkg_setup() {
         linux-mod_pkg_setup
