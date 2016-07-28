@@ -73,14 +73,19 @@ SDK for development of blackmagic apps
 forked and extended version from original blackmagic-capture cli
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
+<a href=https://github.com/mundis/overlay/tree/master/sci-electronics/oregano>sci-electronics/oregano</a>
 </td><td>
 Blackmagic Software and Driver
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-apps/dc3dd>sys-apps/dc3dd</a>
+<a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
 </td><td>
 Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-apps/dc3dd>sys-apps/dc3dd</a>
+</td><td>
+An application for schematic capture and simulation of electrical circuits
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-block/clonezilla>sys-block/clonezilla</a>
