@@ -2,6 +2,7 @@
 #;; If you want to create a file, visit that file with C-x C-f,
 #;; then enter the text in that file's own buffer.
 
+EAPI=5
 inherit eutils
 
 DESCRIPTION="Partition cloning tool"
@@ -15,9 +16,10 @@ IUSE="btrfs xfs jfs reiserfs reiser4 hfs fat ntfs "
 
 RDEPEND="${common_depends}
 	sys-fs/e2fsprogs
+	sys-fs/ntfs3g[ntfsprogs]
         btrfs? ( sys-fs/btrfs-progs )
         fat? ( sys-fs/dosfstools )
-        ntfs? ( sys-fs/ntfsprogs )
+        ntfs? ( sys-fs/ntfs3g )
         hfs? ( sys-fs/hfsutils )
         jfs? ( sys-fs/jfsutils )
         reiserfs? ( sys-fs/progsreiserfs )
