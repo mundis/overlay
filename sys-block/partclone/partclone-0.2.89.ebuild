@@ -36,6 +36,11 @@ src_unpack()
         cd ${S}
 }
 
+src_prepare()
+{
+				epatch "${FILESDIR}"/partclone_reiserfs.patch
+}
+
 src_compile()
 {
         local myconf
