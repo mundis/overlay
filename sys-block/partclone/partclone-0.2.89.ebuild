@@ -32,7 +32,6 @@ DEPEND="${COMMON_DEPEND}
 src_unpack()
 {
         unpack ${A}
-        #mv partclone partclone-${PV}
         cd ${S}
 }
 
