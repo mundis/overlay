@@ -28,6 +28,7 @@ RDEPEND="${COMMON_DEPEND}
         xfs? ( sys-fs/xfsprogs sys-fs/xfsdump )"
 
 DEPEND="${COMMON_DEPEND}
+"
 
 src_unpack()
 {
