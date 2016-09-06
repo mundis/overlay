@@ -15,16 +15,15 @@ KEYWORDS="amd64 x86"
 IUSE="btrfs xfs jfs reiserfs reiser4 hfs fat ntfs "
 
 RDEPEND="${common_depends}
-	sys-fs/e2fsprogs
-	sys-fs/ntfs3g[ntfsprogs]
+	>=sys-fs/e2fsprogs-1.41
+        ntfs? ( >=sys-fs/ntfs3g-2011.4.12[ntfsprogs] )
         btrfs? ( sys-fs/btrfs-progs )
         fat? ( sys-fs/dosfstools )
-        ntfs? ( sys-fs/ntfs3g )
         hfs? ( sys-fs/hfsutils )
         jfs? ( sys-fs/jfsutils )
         reiserfs? ( sys-fs/progsreiserfs )
         reiser4? ( sys-fs/reiser4progs )
-        xfs? ( sys-fs/xfsprogs )"
+        xfs? ( sys-fs/xfsprogs sys-fs/xfsdump )"
 DEPEND=""
 
 src_unpack()
