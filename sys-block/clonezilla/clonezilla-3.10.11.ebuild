@@ -7,7 +7,9 @@ SRC_URI="http://free.nchc.org.tw/drbl-core/src/testing/${PN}-${PV}.tar.bz2"
 SLOT="0"
 LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"
-DEPEND="sys-block/drbl"
+DEPEND="sys-block/drbl
+	sys-fs/cloudfuse
+	sys-block/partclone"
 RDEPEND="${DEPEND}"
 
 src_install() {
