@@ -14,8 +14,10 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="btrfs xfs jfs reiserfs reiser4 hfs fat ntfs "
 
-RDEPEND="${common_depends}
-	>=sys-fs/e2fsprogs-1.41
+COMMON_DEPEND="
+	>=sys-fs/e2fsprogs-1.41"
+
+RDEPEND="${COMMON_DEPEND}
         ntfs? ( >=sys-fs/ntfs3g-2011.4.12[ntfsprogs] )
         btrfs? ( sys-fs/btrfs-progs )
         fat? ( sys-fs/dosfstools )
@@ -24,7 +26,8 @@ RDEPEND="${common_depends}
         reiserfs? ( sys-fs/progsreiserfs )
         reiser4? ( sys-fs/reiser4progs )
         xfs? ( sys-fs/xfsprogs sys-fs/xfsdump )"
-DEPEND=""
+
+DEPEND="${COMMON_DEPEND}
 
 src_unpack()
 {
