@@ -123,8 +123,13 @@ Partition cloning utilities
 distcc-configurator is a scripted autoconfiguration for distccd
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-kernel/aufs-sources>sys-kernel/aufs-sources</a>
+<a href=https://github.com/mundis/overlay/tree/master/sys-fs/vmfs-tools>sys-fs/vmfs-tools</a>
 </td><td>
 IBM's Journaling Filesystem (JFS) Utilities patched for building libjfs.a needed by Partclone
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-kernel/aufs-sources>sys-kernel/aufs-sources</a>
+</td><td>
+Patched Version of squashfs-tools for use with zenity-progress
 </td></tr>
 </table>

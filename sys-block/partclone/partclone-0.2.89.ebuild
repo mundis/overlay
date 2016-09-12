@@ -29,7 +29,7 @@ RDEPEND="${COMMON_DEPEND}
 				nilfs? ( sys-fs/nilfs-utils )
 				ufs? ( sys-fs/ufsutils )
 				f2fs? ( sys-fs/f2fs-tools )
-				vmfs? ( net-fs/vmfs-tools )
+				vmfs? ( sys-fs/vmfs-tools )
 "
 
 DEPEND="${COMMON_DEPEND}
