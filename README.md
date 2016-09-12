@@ -125,7 +125,7 @@ Patched Version of squashfs-tools for use with zenity-progress
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-fs/vmfs-tools>sys-fs/vmfs-tools</a>
 </td><td>
-
+vmfs-tools allows to access VMFS through the standard Linux VFS with the help of the FUSE framework
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-kernel/aufs-sources>sys-kernel/aufs-sources</a>
