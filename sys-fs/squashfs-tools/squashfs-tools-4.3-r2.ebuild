@@ -31,6 +31,7 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}/squashfs${PV}/${PN}"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}-zenity-progress.patch
 	epatch "${WORKDIR}"/debian/patches/*.patch
 	epatch "${FILESDIR}"/${P}-sysmacros.patch
 	epatch "${FILESDIR}"/${P}-aligned-data.patch
@@ -38,7 +39,6 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-local-cve-fix.patch
 	epatch "${FILESDIR}"/${P}-mem-overflow.patch
 	epatch "${FILESDIR}"/${P}-xattrs.patch
-	epatch "${FILESDIR}"/${P}-zenity-progress.patch
 }
 
 use10() { usex $1 1 0 ; }
