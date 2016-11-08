@@ -53,6 +53,11 @@ Open-source PHP5 professional web framework
 The flexible build system
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/media-gfx/mtpaint>media-gfx/mtpaint</a>
+</td><td>
+Simple gtk+ painting program
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/media-video/blackmagic-SDK>media-video/blackmagic-SDK</a>
 </td><td>
 SDK for development of blackmagic apps
