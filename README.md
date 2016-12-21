@@ -13,11 +13,6 @@ and use the following commands
 
 <table>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/app-crypt/chntpw>app-crypt/chntpw</a>
-</td><td>
-Offline Windows NT Password & Registry Editor
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-emulation/vice>app-emulation/vice</a>
 </td><td>
 The Versatile Commodore 8-bit Emulator
