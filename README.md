@@ -68,6 +68,11 @@ forked and extended version from original blackmagic-capture cli
 Blackmagic Software and Driver
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/net-print/samsung-unified-driver>net-print/samsung-unified-driver</a>
+</td><td>
+Samsung Unified Linux Driver for printers and MFDs
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/net-wireless/rtlwifi_new>net-wireless/rtlwifi_new</a>
 </td><td>
 Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless
