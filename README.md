@@ -68,6 +68,16 @@ forked and extended version from original blackmagic-capture cli
 Blackmagic Software and Driver
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/net-print/cndrvcups-capt>net-print/cndrvcups-capt</a>
+</td><td>
+Canon CUPS Capt driver
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/net-print/cndrvcups-common>net-print/cndrvcups-common</a>
+</td><td>
+Common files for the Canon CUPS Capt driver
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/net-print/samsung-unified-driver>net-print/samsung-unified-driver</a>
 </td><td>
 Samsung Unified Linux Driver for printers and MFDs
