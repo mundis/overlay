@@ -23,6 +23,11 @@ The Versatile Commodore 8-bit Emulator
 A GUI front-end to dd/dc3dd
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/app-misc/kupfer>app-misc/kupfer</a>
+</td><td>
+Kupfer, a convenient command and access tool
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-misc/slap>app-misc/slap</a>
 </td><td>
 slap is 'Smart Label Printer' command line program
