@@ -98,6 +98,11 @@ Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl872
 An application for schematic capture and simulation of electrical circuits
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sci-electronics/smartsim>sci-electronics/smartsim</a>
+</td><td>
+
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
 </td><td>
 H2rename is especially developed to repair/rename broken charakters so called umlauts
