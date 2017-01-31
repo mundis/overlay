@@ -105,7 +105,7 @@ An application for schematic capture and simulation of electrical circuits
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sci-electronics/smartsim>sci-electronics/smartsim</a>
 </td><td>
-
+SmartSim is a free and open source digital logic circuit design and simulation package
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>

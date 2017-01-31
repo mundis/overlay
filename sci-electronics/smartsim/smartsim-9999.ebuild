@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI=5
-DESCRIPTION=""
+DESCRIPTION="SmartSim is a free and open source digital logic circuit design and simulation package"
 EGIT_REPO_URI="https://github.com/ashleynewson/SmartSim.git"
 inherit autotools git-r3 
 SRC_URI=""
