@@ -53,11 +53,6 @@ Open-source PHP5 professional web framework
 ${PN} is a library for python inspired by zenity
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/dev-util/waf>dev-util/waf</a>
-</td><td>
-The flexible build system
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/media-gfx/mtpaint>media-gfx/mtpaint</a>
 </td><td>
 Simple gtk+ painting program
