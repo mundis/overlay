@@ -153,13 +153,18 @@ Canon CUPS Capt driver
 Common files for the Canon CUPS Capt driver
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-apps/dc3dd>sys-apps/dc3dd</a>
+<a href=https://github.com/mundis/overlay/tree/master/sys-apps/myrescue>sys-apps/myrescue</a>
 </td><td>
 Samsung Unified Linux Driver for printers and MFDs
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
+<a href=https://github.com/mundis/overlay/tree/master/sys-apps/dc3dd>sys-apps/dc3dd</a>
 </td><td>
 Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/sys-apps/H2rename>sys-apps/H2rename</a>
+</td><td>
+myrescue is similiar in purpose to dd_rescue, but it tries to quickly get out of damaged areas to first handle the not yet damaged part of the disk and return later
 </td></tr>
 </table>
