@@ -33,6 +33,11 @@ The Versatile Commodore 8-bit Emulator
 A GUI front-end to dd/dc3dd
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/app-forensics/stegdetect>app-forensics/stegdetect</a>
+</td><td>
+A Steganography detector for JPEG
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-misc/kupfer>app-misc/kupfer</a>
 </td><td>
 Kupfer, a convenient command and access tool
