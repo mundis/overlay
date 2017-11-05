@@ -3,14 +3,12 @@
 # $Id$
 
 EAPI="6"
+inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
 
 PYTHON_COMPAT=( python2_7 python3_4 )
 PYTHON_REQ_USE='threads(+)'
 
-inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
-
 DESCRIPTION="An application for schematic capture and simulation of electrical circuits"
-HOMEPAGE="https://ahoi.io/project/oregano"
 SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"

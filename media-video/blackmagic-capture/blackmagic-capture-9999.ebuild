@@ -2,10 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI=5
+inherit git-2
+
 DESCRIPTION="forked and extended version from original blackmagic-capture cli"
 EGIT_REPO_URI="https://github.com/lu-zero/bmdtools.git"
-inherit git-2
 SRC_URI=""
+
 SLOT="0"
 LICENSE="GPL3"
 KEYWORDS="~x86 ~amd64"

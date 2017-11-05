@@ -3,6 +3,7 @@
 # $Header: $
 
 EAPI=5
+
 DESCRIPTION="slap is 'Smart Label Printer' command line program"
 SRC_URI="https://github.com/mundis/slap/raw/master/original/${PN}-${PV}.tar.gz"
 
@@ -11,7 +12,6 @@ LICENSE="GPL"
 KEYWORDS="~x86 ~amd64"
 DEPEND="dev-libs/mjsulib"
 RDEPEND="${DEPEND}"
-
 
 src_unpack() {
 	unpack ${P}.tar.gz

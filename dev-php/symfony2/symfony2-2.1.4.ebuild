@@ -3,10 +3,9 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-php/symfony/symfony-1.4.12.ebuild,v 1.1 2011/07/01 12:58:23 olemarkus Exp $
 
 EAPI=2
+inherit php-lib-r1
 
 PHP_LIB_NAME="Symfony2"
-
-inherit php-lib-r1
 
 KEYWORDS="~amd64 ~x86"
 

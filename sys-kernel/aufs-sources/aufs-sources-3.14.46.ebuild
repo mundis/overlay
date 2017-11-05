@@ -3,13 +3,13 @@
 # $Header: /var/cvsroot/gentoo-x86/sys-kernel/aufs-sources/Attic/aufs-sources-3.14.46.ebuild,v 1.2 2015/07/27 13:23:31 jlec dead $
 
 EAPI=5
+inherit kernel-2 eutils readme.gentoo
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_GENPATCHES_VER="52"
 K_DEBLOB_AVAILABLE="1"
 UNIPATCH_STRICTORDER=1
-inherit kernel-2 eutils readme.gentoo
 detect_version
 detect_arch
 

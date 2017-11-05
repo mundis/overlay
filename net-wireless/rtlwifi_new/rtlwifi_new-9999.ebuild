@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI=4
-DESCRIPTION="Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless"
-#EGIT_REPO_URI="https://github.com/lwfinger/rtlwifi_new.git"
-EGIT_REPO_URI="/usr/portage/distfiles/egit-src/rtlwifi_new.git"
 inherit git-2 linux-mod
+
+DESCRIPTION="Driver for Realtek rtl8192ce, rtl8192se, rtl8192de, rtl8188ee, rtl8192ee, rtl8723ae, rtl8723be, and rtl8821ae Wireless"
+EGIT_REPO_URI="https://github.com/lwfinger/rtlwifi_new.git"
 SRC_URI=""
+
 SLOT="0"
 LICENSE="Realtek-Firmware-License"
 KEYWORDS="~x86 ~amd64"

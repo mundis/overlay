@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI="2"
-
 inherit eutils toolchain-funcs multilib
 
 DESCRIPTION="It's a complete cross development package for 65(C)02 systems."

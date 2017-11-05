@@ -3,7 +3,6 @@
 # $Id$
 
 EAPI=5
-
 inherit eutils git-r3
 
 DESCRIPTION="vmfs-tools allows to access VMFS through the standard Linux VFS with the help of the FUSE framework"

@@ -3,7 +3,6 @@
 # $Header: /var/cvsroot/gentoo-x86/sys-fs/squashfs-tools/squashfs-tools-4.2-r1.ebuild,v 1.1 2012/04/19 01:59:06 jer Exp $
 
 EAPI=4
-
 inherit eutils toolchain-funcs
 
 MY_PV=${PV}

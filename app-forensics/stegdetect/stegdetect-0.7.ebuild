@@ -3,10 +3,9 @@
 # $Header: $
 
 EAPI=5
+inherit eutils flag-o-matic autotools
 
 #WANT_AUTOMAKE="1.4"
-
-inherit eutils flag-o-matic autotools
 
 DESCRIPTION="A Steganography detector for JPEG"
 HOMEPAGE="http://www.outguess.org/"

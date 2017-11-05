@@ -3,7 +3,6 @@
 # $Id$
 
 EAPI=5
-
 inherit autotools flag-o-matic eutils
 
 DESCRIPTION="IBM's Journaling Filesystem (JFS) Utilities patched for building libjfs.a needed by Partclone"
