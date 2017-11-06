@@ -3,12 +3,13 @@
 # $Header: $
 
 EAPI=5
-inherit eutils fdo-mime gnome2-utils python-single-r1 waf-utils
 
 # Kupfer itself may work with Python 3 but at least dev-python/pygtk
 # doesn't support it.
 PYTHON_COMPAT=( python2_7 )
 PYTHON_REQ_USE="threads(+)" # threads for waf
+
+inherit eutils fdo-mime gnome2-utils python-single-r1 waf-utils
 
 DESCRIPTION="Kupfer, a convenient command and access tool"
 HOMEPAGE="http://engla.github.io/kupfer"
