@@ -9,8 +9,8 @@ inherit linux-info udev vcs-snapshot
 EXTRA_PV=00.99
 
 DESCRIPTION="Samsung Unified Linux Driver for printers and MFDs"
-HOMEPAGE="http://www.samsung.com"
-SRC_URI="http://downloadcenter.samsung.com/content/DR/201512/20151211135958538/ULD_v${PV}_${EXTRA_PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="http://www.hp.com"
+SRC_URI="http://ftp.hp.com/pub/softlib/software13/printers/SS/SL-M2070/uld_v${PV}_${EXTRA_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="Samsung-EULA"
 SLOT="0"
