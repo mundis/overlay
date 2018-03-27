@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/sys-apps/dcfldd/dcfldd-1.3.4.1.ebuild,v 1.3 2011/12/03 11:17:00 hwoarang Exp $
 
 EAPI=5
-inherit unpacker
+inherit unpacker autotools
 DESCRIPTION="Patched version of dd with features intended for forensic acquisition of data"
 HOMEPAGE="http://sourceforge.net/projects/dc3dd"
 SRC_URI="http://sourceforge.net/projects/${PN}/files/${PN}/${PV}/dc3dd%207.2.646/${PF}.zip"
