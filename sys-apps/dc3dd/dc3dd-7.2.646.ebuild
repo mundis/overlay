@@ -17,6 +17,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_configure() {
+	eautoreconf
         econf $(use_enable nls) --enable-hdparm
 }
 
