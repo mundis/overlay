@@ -1,5 +1,5 @@
-diff -ruN ../squashfs-tools.old/caches-queues-lists.h ./caches-queues-lists.h
---- ../squashfs-tools.old/caches-queues-lists.h	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/caches-queues-lists.h ./caches-queues-lists.h
+--- ../squashfs-tools/caches-queues-lists.h	2014-05-10 04:54:13.000000000 -0000
 +++ ./caches-queues-lists.h	2018-06-20 10:43:56.764310990 -0000
 @@ -123,6 +123,7 @@
  	char locked;
@@ -9,8 +9,8 @@ diff -ruN ../squashfs-tools.old/caches-queues-lists.h ./caches-queues-lists.h
  	char data[0];
  };
  
-diff -ruN ../squashfs-tools.old/gzip_wrapper.h ./gzip_wrapper.h
---- ../squashfs-tools.old/gzip_wrapper.h	2014-05-11 23:29:29.000000000 -0000
+diff -ruN ../squashfs-tools/gzip_wrapper.h ./gzip_wrapper.h
+--- ../squashfs-tools/gzip_wrapper.h	2014-05-11 23:29:29.000000000 -0000
 +++ ./gzip_wrapper.h	2018-06-20 10:43:56.764310990 -0000
 @@ -24,7 +24,7 @@
   *
@@ -21,8 +21,8 @@ diff -ruN ../squashfs-tools.old/gzip_wrapper.h ./gzip_wrapper.h
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/lz4_wrapper.h ./lz4_wrapper.h
---- ../squashfs-tools.old/lz4_wrapper.h	2014-03-09 05:31:58.000000000 -0000
+diff -ruN ../squashfs-tools/lz4_wrapper.h ./lz4_wrapper.h
+--- ../squashfs-tools/lz4_wrapper.h	2014-03-09 05:31:58.000000000 -0000
 +++ ./lz4_wrapper.h	2018-06-20 10:43:56.764310990 -0000
 @@ -24,7 +24,7 @@
   *
@@ -33,8 +33,8 @@ diff -ruN ../squashfs-tools.old/lz4_wrapper.h ./lz4_wrapper.h
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/lzo_wrapper.h ./lzo_wrapper.h
---- ../squashfs-tools.old/lzo_wrapper.h	2014-03-09 05:31:59.000000000 -0000
+diff -ruN ../squashfs-tools/lzo_wrapper.h ./lzo_wrapper.h
+--- ../squashfs-tools/lzo_wrapper.h	2014-03-09 05:31:59.000000000 -0000
 +++ ./lzo_wrapper.h	2018-06-20 10:43:56.764310990 -0000
 @@ -24,7 +24,7 @@
   *
@@ -45,8 +45,8 @@ diff -ruN ../squashfs-tools.old/lzo_wrapper.h ./lzo_wrapper.h
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/mksquashfs.c ./mksquashfs.c
---- ../squashfs-tools.old/mksquashfs.c	2014-05-12 22:18:20.000000000 -0000
+diff -ruN ../squashfs-tools/mksquashfs.c ./mksquashfs.c
+--- ../squashfs-tools/mksquashfs.c	2014-05-12 22:18:20.000000000 -0000
 +++ ./mksquashfs.c	2018-06-20 10:43:56.764310990 -0000
 @@ -51,7 +51,7 @@
  #include <limits.h>
@@ -232,8 +232,8 @@ diff -ruN ../squashfs-tools.old/mksquashfs.c ./mksquashfs.c
  			ERROR("-processors <number>\tUse <number> processors."
  				"  By default will use number of\n");
  			ERROR("\t\t\tprocessors available\n");
-diff -ruN ../squashfs-tools.old/progressbar.c ./progressbar.c
---- ../squashfs-tools.old/progressbar.c	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/progressbar.c ./progressbar.c
+--- ../squashfs-tools/progressbar.c	2014-05-10 04:54:13.000000000 -0000
 +++ ./progressbar.c	2018-06-20 10:43:56.764310990 -0000
 @@ -48,6 +48,10 @@
  int cur_uncompressed = 0, estimated_uncompressed = 0;
@@ -285,8 +285,8 @@ diff -ruN ../squashfs-tools.old/progressbar.c ./progressbar.c
  
  void disable_progress_bar()
  {
-diff -ruN ../squashfs-tools.old/progressbar.h ./progressbar.h
---- ../squashfs-tools.old/progressbar.h	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/progressbar.h ./progressbar.h
+--- ../squashfs-tools/progressbar.h	2014-05-10 04:54:13.000000000 -0000
 +++ ./progressbar.h	2018-06-20 10:43:56.764310990 -0000
 @@ -28,6 +28,7 @@
  extern void dec_progress_bar(int count);
@@ -296,8 +296,8 @@ diff -ruN ../squashfs-tools.old/progressbar.h ./progressbar.h
  extern void disable_progress_bar();
  extern void init_progress_bar();
  extern void set_progressbar_state(int);
-diff -ruN ../squashfs-tools.old/read_fs.c ./read_fs.c
---- ../squashfs-tools.old/read_fs.c	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/read_fs.c ./read_fs.c
+--- ../squashfs-tools/read_fs.c	2014-05-10 04:54:13.000000000 -0000
 +++ ./read_fs.c	2018-06-20 10:43:56.764310990 -0000
 @@ -35,7 +35,7 @@
  #include <limits.h>
@@ -308,8 +308,8 @@ diff -ruN ../squashfs-tools.old/read_fs.c ./read_fs.c
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/read_xattrs.c ./read_xattrs.c
---- ../squashfs-tools.old/read_xattrs.c	2014-03-09 05:31:59.000000000 -0000
+diff -ruN ../squashfs-tools/read_xattrs.c ./read_xattrs.c
+--- ../squashfs-tools/read_xattrs.c	2014-03-09 05:31:59.000000000 -0000
 +++ ./read_xattrs.c	2018-06-20 10:43:56.764310990 -0000
 @@ -31,7 +31,7 @@
  #include <stdio.h>
@@ -320,8 +320,8 @@ diff -ruN ../squashfs-tools.old/read_xattrs.c ./read_xattrs.c
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/squashfs_fs.h ./squashfs_fs.h
---- ../squashfs-tools.old/squashfs_fs.h	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/squashfs_fs.h ./squashfs_fs.h
+--- ../squashfs-tools/squashfs_fs.h	2014-05-10 04:54:13.000000000 -0000
 +++ ./squashfs_fs.h	2018-06-20 10:43:56.764310990 -0000
 @@ -31,6 +31,12 @@
  #define SQUASHFS_MAGIC_SWAP		0x68737173
@@ -336,8 +336,8 @@ diff -ruN ../squashfs-tools.old/squashfs_fs.h ./squashfs_fs.h
  /* size of metadata (inode and directory) blocks */
  #define SQUASHFS_METADATA_SIZE		8192
  #define SQUASHFS_METADATA_LOG		13
-diff -ruN ../squashfs-tools.old/swap.c ./swap.c
---- ../squashfs-tools.old/swap.c	2014-03-09 05:31:59.000000000 -0000
+diff -ruN ../squashfs-tools/swap.c ./swap.c
+--- ../squashfs-tools/swap.c	2014-03-09 05:31:59.000000000 -0000
 +++ ./swap.c	2018-06-20 10:43:56.774311005 -0000
 @@ -19,7 +19,7 @@
   * swap.c
@@ -348,8 +348,8 @@ diff -ruN ../squashfs-tools.old/swap.c ./swap.c
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/unsquash-4.c ./unsquash-4.c
---- ../squashfs-tools.old/unsquash-4.c	2014-03-09 05:31:59.000000000 -0000
+diff -ruN ../squashfs-tools/unsquash-4.c ./unsquash-4.c
+--- ../squashfs-tools/unsquash-4.c	2014-03-09 05:31:59.000000000 -0000
 +++ ./unsquash-4.c	2018-06-20 10:43:56.774311005 -0000
 @@ -31,11 +31,11 @@
  int read_fragment_table_4(long long *directory_table_end)
@@ -379,8 +379,8 @@ diff -ruN ../squashfs-tools.old/unsquash-4.c ./unsquash-4.c
  	fragment_table = malloc(bytes);
  	if(fragment_table == NULL)
  		EXIT_UNSQUASH("read_fragment_table: failed to allocate "
-diff -ruN ../squashfs-tools.old/unsquashfs.c ./unsquashfs.c
---- ../squashfs-tools.old/unsquashfs.c	2014-05-12 22:18:35.000000000 -0000
+diff -ruN ../squashfs-tools/unsquashfs.c ./unsquashfs.c
+--- ../squashfs-tools/unsquashfs.c	2014-05-12 22:18:35.000000000 -0000
 +++ ./unsquashfs.c	2018-06-20 10:43:56.774311005 -0000
 @@ -38,6 +38,10 @@
  #include <limits.h>
@@ -546,8 +546,8 @@ diff -ruN ../squashfs-tools.old/unsquashfs.c ./unsquashfs.c
  			ERROR("\t-no[-xattrs]\t\tdon't extract xattrs in file system"
  				NOXOPT_STR"\n");
  			ERROR("\t-x[attrs]\t\textract xattrs in file system"
-diff -ruN ../squashfs-tools.old/unsquashfs.h ./unsquashfs.h
---- ../squashfs-tools.old/unsquashfs.h	2014-05-10 04:54:13.000000000 -0000
+diff -ruN ../squashfs-tools/unsquashfs.h ./unsquashfs.h
+--- ../squashfs-tools/unsquashfs.h	2014-05-10 04:54:13.000000000 -0000
 +++ ./unsquashfs.h	2018-06-20 10:43:56.774311005 -0000
 @@ -47,7 +47,7 @@
  #include <sys/ioctl.h>
@@ -558,8 +558,8 @@ diff -ruN ../squashfs-tools.old/unsquashfs.h ./unsquashfs.h
  #define __BYTE_ORDER BYTE_ORDER
  #define __BIG_ENDIAN BIG_ENDIAN
  #define __LITTLE_ENDIAN LITTLE_ENDIAN
-diff -ruN ../squashfs-tools.old/xz_wrapper.h ./xz_wrapper.h
---- ../squashfs-tools.old/xz_wrapper.h	2014-03-09 05:31:59.000000000 -0000
+diff -ruN ../squashfs-tools/xz_wrapper.h ./xz_wrapper.h
+--- ../squashfs-tools/xz_wrapper.h	2014-03-09 05:31:59.000000000 -0000
 +++ ./xz_wrapper.h	2018-06-20 10:43:56.774311005 -0000
 @@ -24,7 +24,7 @@
   *
