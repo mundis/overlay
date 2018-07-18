@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
-inherit git-2 qt4-r2
+EAPI=6
+inherit git-r3
 
 DESCRIPTION="H2rename is especially developed to repair/rename broken charakters so called umlauts"
 EGIT_REPO_URI="git://github.com/ctbo/h2rename.git"
@@ -15,7 +15,7 @@ KEYWORDS="~x86 ~amd64"
 DEPEND="dev-qt/qtgui:4"
 RDEPEND="${DEPEND}"
 src_unpack() {
-	git-2_src_unpack
+	git-r3_src_unpack
 }
 
 src_install() {
