@@ -3,16 +3,16 @@
 # $Header: $
 
 EAPI=6
-inherit git-r3
+inherit git-r3 desktop
 
 DESCRIPTION="H2rename is especially developed to repair/rename broken charakters so called umlauts"
-EGIT_REPO_URI="git://github.com/ctbo/h2rename.git"
+EGIT_REPO_URI="https://github.com/mundis/h2rename.git"
 SRC_URI=""
 
 SLOT="0"
 LICENSE="GPL3"
-#KEYWORDS="~x86 ~amd64"
-DEPEND="dev-qt/qtgui:4"
+KEYWORDS="~x86 ~amd64"
+DEPEND="dev-qt/qtgui:5"
 RDEPEND="${DEPEND}"
 src_unpack() {
 	git-r3_src_unpack
