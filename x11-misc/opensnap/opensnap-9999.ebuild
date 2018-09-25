@@ -26,3 +26,10 @@ src_install() {
 	insinto /etc/${PN}
 	doins sample_configs/*
 }
+
+pkg_postinst() {
+	ewarn "for autostart opensnap daemon you have to add the following"
+	ewarn	"two lines to your ~/.config/openbox/autostart file:"
+	ewarn "\tkill `ps ax | grep opensnap | grep -v grep | awk '{print $1}'`"
+	ewarn "opensnap -d"
+}
