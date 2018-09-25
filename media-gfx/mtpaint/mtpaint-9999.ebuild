@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=3
+EAPI=7
 
-inherit eutils base
+inherit eutils
 
 DESCRIPTION="Simple gtk+ painting program"
 HOMEPAGE="http://mtpaint.sourceforge.net/"
