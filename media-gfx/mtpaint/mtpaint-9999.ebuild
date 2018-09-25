@@ -12,7 +12,7 @@ HOMEPAGE="http://mtpaint.sourceforge.net/"
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 else
-	inherit git-r3 
+	inherit git-r3
 	EGIT_REPO_URI="https://github.com/wjaguar/mtPaint.git"
 fi
 
@@ -41,7 +41,7 @@ DOCS=("README" "NEWS")
 
 src_prepare() {
 	default
-	epatch "${FILESDIR}/${PN}-libpng14.patch"
+	eapply "${FILESDIR}/${PN}-libpng14.patch"
 	sed -i configure \
 	    -e 's:LDFLAGS="-s:LDFLAGS=":g' \
 	    || die "sed failed"
