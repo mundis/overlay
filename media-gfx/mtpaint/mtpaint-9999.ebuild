@@ -40,6 +40,7 @@ RDEPEND="${DEPEND}"
 DOCS=("README" "NEWS")
 
 src_prepare() {
+	default
 	epatch "${FILESDIR}/${PN}-libpng14.patch"
 	sed -i configure \
 	    -e 's:LDFLAGS="-s:LDFLAGS=":g' \
