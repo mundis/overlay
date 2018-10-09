@@ -29,11 +29,6 @@ RDEPEND="${CDEPEND}
 	|| ( gnome-base/dconf gnome-base/gconf )
 	sci-electronics/electronics-menu"
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-remove-schema-update.patch"
-	eapply_user
-}
-
 src_compile() {
 	local _mywafconfig
 	[[ "${WAF_VERBOSE}" ]] && _mywafconfig="--verbose"
