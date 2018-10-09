@@ -33,11 +33,6 @@ Samsung Unified Linux Driver for printers and MFDs
 Eclipse IDE for building, editing and debugging HTML/CSS/JavaScript/PHP/Ruby on Rails.
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/app-emulation/vice>app-emulation/vice</a>
-</td><td>
-The Versatile Commodore 8-bit Emulator
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-python/python-zenity>dev-python/python-zenity</a>
 </td><td>
 ${PN} is a library for python inspired by zenity
