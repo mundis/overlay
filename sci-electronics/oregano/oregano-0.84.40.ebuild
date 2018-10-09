@@ -30,7 +30,7 @@ RDEPEND="${CDEPEND}
 	sci-electronics/electronics-menu"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-remove-schema-update.patch"
+	epatch "${FILESDIR}/${PN}-remove-schema-update.patch"
 	eapply_user
 }
 
