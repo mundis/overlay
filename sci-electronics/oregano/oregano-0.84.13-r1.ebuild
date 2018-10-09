@@ -1,15 +1,15 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI="6"
 
-PYTHON_COMPAT=( python2_7 python3_4 )
+PYTHON_COMPAT=( python2_7 python3_6 )
 PYTHON_REQ_USE='threads(+)'
 
 inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
 
 DESCRIPTION="An application for schematic capture and simulation of electrical circuits"
+HOMEPAGE="https://ahoi.io/project/oregano"
 SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -29,6 +29,8 @@ RDEPEND="${CDEPEND}
 	|| ( gnome-base/dconf gnome-base/gconf )
 	sci-electronics/electronics-menu"
 
+PATCHES=( "${FILESDIR}/${PN}-0.84.6-do-not-update-mime-db.patch" )
+
 src_compile() {
 	local _mywafconfig
 	[[ "${WAF_VERBOSE}" ]] && _mywafconfig="--verbose"
@@ -36,6 +38,14 @@ src_compile() {
 	local jobs="--jobs=$(makeopts_jobs)"
 	echo "\"${WAF_BINARY}\" build ${_mywafconfig} ${jobs}"
 	"${WAF_BINARY}" ${_mywafconfig} ${jobs} release || die "build failed"
+}
+
+src_install() {
+	echo "\"${WAF_BINARY}\" --destdir=\"${D}\" install"
+	"${WAF_BINARY}" --destdir="${D}" install || die "Make install failed"
+	rm "${D}"/usr/share/glib-2.0/schemas/gschemas.compiled
+
+	einstalldocs
 }
 
 pkg_preinst() {
