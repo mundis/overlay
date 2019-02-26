@@ -13,7 +13,7 @@ KEYWORDS="~x86 ~amd64"
 DEPEND="sys-devel/distcc
 			  net-analyzer/nmap
 				net-misc/ipcalc
-				net-analyzer/netcat"
+				|| ( net-analyzer/netcat net-analyzer/netcat6 )"
 RDEPEND="${DEPEND}"
 S=${WORKDIR}
 
