@@ -1,0 +1,265 @@
+diff -Naru h2rename.old/H2rename.pro h2rename/H2rename.pro
+--- h2rename.old/H2rename.pro	2019-05-29 22:59:40.283731051 +0200
++++ h2rename/H2rename.pro	2019-05-29 22:55:55.918746711 +0200
+@@ -1,6 +1,7 @@
+ # H2rename.pro
+ TEMPLATE = app
+-
++QT += widgets
++QT+= concurrent
+ # Input
+ HEADERS += h2rename.h
+ FORMS += h2rename.ui \
+diff -Naru h2rename.old/README.md h2rename/README.md
+--- h2rename.old/README.md	1970-01-01 01:00:00.000000000 +0100
++++ h2rename/README.md	2019-05-29 22:55:55.919746711 +0200
+@@ -0,0 +1,2 @@
++# h2rename
++This source code is a from qt4 to qt5 ported version of https://github.com/ctbo/h2rename
+diff -Naru h2rename.old/h2rename.cpp h2rename/h2rename.cpp
+--- h2rename.old/h2rename.cpp	2019-05-29 22:59:40.284731051 +0200
++++ h2rename/h2rename.cpp	2019-05-29 22:55:55.919746711 +0200
+@@ -1,7 +1,7 @@
+ /*
+ 	This file is part of H2rename.
+ 
+-	Copyright (C) 2009 by Harald Bögeholz / c't Magazin für Computertechnik
++	Copyright (C) 2009 by Harald BÃ¶geholz / c't Magazin fÃ¼r Computertechnik
+ 	www.ctmagazin.de
+ 
+ 	This program is free software: you can redistribute it and/or modify
+@@ -23,7 +23,7 @@
+ #include <QFileDialog>
+ #include <QMessageBox>
+ #include <QHeaderView>
+-#include <qtconcurrentmap.h>
++#include <QtConcurrent/QtConcurrent>
+ #include <QTime>
+ #include <QThreadPool>
+ #include <QtAlgorithms>
+@@ -57,6 +57,7 @@
+ 
+ void RenameRulesModel::appendRules(const QList<RenameRule> &rules)
+ {
++	beginResetModel();
+ 	for (QList<RenameRule>::const_iterator p = rules.constBegin(); p != rules.constEnd(); ++p)
+ 	{
+ 		if (!containsSearchString(p->column[RenameRule::Search]))
+@@ -65,7 +66,7 @@
+ 			//nColumns = 3;
+ 		}
+ 	}
+-	reset();
++	endResetModel();
+ 	emit rulesChanged();
+ }
+ 
+@@ -88,8 +89,9 @@
+ 
+ void RenameRulesModel::clear()
+ {
++	beginResetModel();
+ 	rules.clear();
+-	reset();
++	endResetModel();
+ 	emit rulesChanged();
+ }
+ 
+@@ -133,11 +135,11 @@
+ 			if (index.row() < rules.count() && rules.at(index.row()).column[RenameRule::Search].isEmpty())
+ 				return tr("ACHTUNG: Suchstring leer!");
+ 			if (index.row() < rules.count() && rules.at(index.row()).column[RenameRule::Replace].contains(QChar('\\')))
+-				return tr("ACHTUNG: Ersetzungsstring enthält einen Backslash (\\)");
++				return tr("ACHTUNG: Ersetzungsstring enthÃ¤lt einen Backslash (\\)");
+ 			if (index.row() < rules.count() && rules.at(index.row()).column[RenameRule::Replace].contains(QChar('/')))
+-				return tr("ACHTUNG: Ersetzungsstring enthält einen Schrägstrich (/)");
++				return tr("ACHTUNG: Ersetzungsstring enthÃ¤lt einen SchrÃ¤gstrich (/)");
+ 			if (index.row() < rules.count() && rules.at(index.row()).column[RenameRule::Replace].contains(QChar(':')))
+-				return tr("ACHTUNG: Ersetzungsstring enthält einen Doppelpunkt!");
++				return tr("ACHTUNG: Ersetzungsstring enthÃ¤lt einen Doppelpunkt!");
+ 			break;
+ 
+ 		case Qt::BackgroundRole:
+@@ -220,10 +222,11 @@
+ 
+ void RenameRulesModel::removeRowList(const QVector<bool> &rowlist)
+ {
++	beginResetModel();
+ 	for (int i=rowlist.count()-1; i>=0; --i)
+ 		if (rowlist.at(i) && i<rules.count())
+ 			rules.removeAt(i);
+-	reset();
++	endResetModel();
+ 	emit rulesChanged();
+ }
+ 
+@@ -247,6 +250,7 @@
+ 
+ void NamesModel::setDirectories(const QVector<Directory> &directories)
+ {
++	beginResetModel();
+ 	this->directories = directories;
+ 	rowOffset.clear();
+ 	int row = 0;
+@@ -258,17 +262,18 @@
+ 	namesCount = row;
+ 
+ 	computeNewNames();
+-	reset();
++	endResetModel();
+ }
+ 
+ void NamesModel::clear()
+ {
++	beginResetModel();
+ 	directories.clear();
+ 	rowOffset.clear();
+ 	namesCount = 0;
+ 	nChanged = 0;
+ 	nCollisions = 0;
+-	reset();
++	endResetModel();
+ }
+ 
+ void NamesModel::setHighlights(const QVector<bool> &highlights)
+@@ -453,7 +458,7 @@
+ {
+ 	QVector<int>::const_iterator p = qUpperBound(rowOffset.constBegin(), rowOffset.constEnd(), row);
+ 	if (p == rowOffset.constEnd() || *p > row)
+-		--p; // müsste eigentlich jedes Mal passieren
++		--p; // mÃ¼sste eigentlich jedes Mal passieren
+ 	int i = p - rowOffset.constBegin();
+ 	int j = row - *p;
+ 	return directories.at(i).names.at(j);
+@@ -463,7 +468,7 @@
+ {
+ 	QVector<int>::const_iterator p = qUpperBound(rowOffset.constBegin(), rowOffset.constEnd(), row);
+ 	if (p == rowOffset.constEnd() || *p > row)
+-		--p; // müsste eigentlich jedes Mal passieren
++		--p; // mÃ¼sste eigentlich jedes Mal passieren
+ 	int i = p - rowOffset.constBegin();
+ 	int j = row - *p;
+ 	return directories[i].names[j];
+@@ -493,7 +498,7 @@
+ }
+ 
+ 
+-H2rename::H2rename(QWidget *parent, Qt::WFlags flags)
++H2rename::H2rename(QWidget *parent, Qt::WindowFlags flags)
+ 	: QWidget(parent, flags)
+ {
+ 	ui.setupUi(this);
+@@ -508,14 +513,14 @@
+ 	ui.tableView_names->verticalHeader()->hide();
+ 	ui.tableView_names->horizontalHeader()->setStretchLastSection(true);
+ 
+-	insertRuleAction = new QAction(tr("Regel &einfügen"), this);
++	insertRuleAction = new QAction(tr("Regel &einfÃ¼gen"), this);
+ 	insertRuleAction->setShortcut(tr("Ctrl+E"));
+ 	insertRuleAction->setIconVisibleInMenu(false);
+ 	connect(insertRuleAction, SIGNAL(triggered()),
+ 		this, SLOT(on_pushButton_insertRow_clicked()));
+ 	ui.tableView_replacements->addAction(insertRuleAction);
+ 
+-	removeRulesAction = new QAction(tr("Regel(n) &löschen"), this);
++	removeRulesAction = new QAction(tr("Regel(n) &lÃ¶schen"), this);
+ 	removeRulesAction->setShortcut(tr("Ctrl+L"));
+ 	removeRulesAction->setIconVisibleInMenu(false);
+ 	connect(removeRulesAction, SIGNAL(triggered()),
+@@ -595,7 +600,7 @@
+ 	int nNames = NamesModel::globalInstance().rowCount();
+ 	int nChanges = NamesModel::globalInstance().changedNamesCount();
+ 	int nCollisions = NamesModel::globalInstance().collisionCount();
+-	ui.label_numbers->setText(tr("%1 %2, %3 %4").arg(nNames).arg(nNames==1?tr("Name"):tr("Namen")).arg(nChanges).arg(nChanges==1?tr("Änderung"):tr("Änderungen")));
++	ui.label_numbers->setText(tr("%1 %2, %3 %4").arg(nNames).arg(nNames==1?tr("Name"):tr("Namen")).arg(nChanges).arg(nChanges==1?tr("Ã„nderung"):tr("Ã„nderungen")));
+ 	ui.pushButton_Rename->setEnabled(nChanges - nCollisions > 0);
+ 	if (NamesModel::globalInstance().collisionCount() > 0)
+ 		ui.label_collisions->setText(tr("%1 %2!").arg(NamesModel::globalInstance().collisionCount())
+@@ -721,7 +726,7 @@
+ 
+ void H2rename::on_pushButton_SelectDir_clicked()
+ {
+-	QString path = QFileDialog::getExistingDirectory(this, tr("Verzeichnis wählen"), 
++	QString path = QFileDialog::getExistingDirectory(this, tr("Verzeichnis wÃ¤hlen"), 
+ 		ui.lineEdit_DirName->text(), QFileDialog::ShowDirsOnly);
+ 	ui.lineEdit_DirName->setText(QDir::toNativeSeparators(path));
+ 	if (!path.isEmpty())
+@@ -796,7 +801,7 @@
+ }
+ 
+ 
+-ReadDirProgressDialog::ReadDirProgressDialog(QWidget *parent, Qt::WFlags flags)
++ReadDirProgressDialog::ReadDirProgressDialog(QWidget *parent, Qt::WindowFlags flags)
+ : QDialog(parent, flags)
+ {
+ 	ui.setupUi(this);
+@@ -826,7 +831,7 @@
+ 		QMessageBox::Yes | QMessageBox::No))
+ 	{
+ 		QProgressDialog progress(this);
+-		progress.setLabelText(tr("Umbenennen läuft ..."));
++		progress.setLabelText(tr("Umbenennen lÃ¤uft ..."));
+ 		progress.setRange(0, renameCount);
+ 		progress.setModal(true);
+ 
+diff -Naru h2rename.old/h2rename.h h2rename/h2rename.h
+--- h2rename.old/h2rename.h	2019-05-29 22:59:40.284731051 +0200
++++ h2rename/h2rename.h	2019-05-29 22:55:55.919746711 +0200
+@@ -1,7 +1,7 @@
+ /*
+ 	This file is part of H2rename.
+ 
+-	Copyright (C) 2009 by Harald Bögeholz / c't Magazin für Computertechnik
++	Copyright (C) 2009 by Harald BÃ¶geholz / c't Magazin fÃ¼r Computertechnik
+ 	www.ctmagazin.de
+ 
+ 	This program is free software: you can redistribute it and/or modify
+@@ -21,7 +21,8 @@
+ #ifndef H2RENAME_H
+ #define H2RENAME_H
+ 
+-#include <QtGui/QDialog>
++#include <QDialog>
++#include <QAction>
+ #include <QThread>
+ #include <QMutex>
+ #include <QSortFilterProxyModel>
+@@ -248,7 +249,7 @@
+ 	Q_OBJECT
+ 
+ public:
+-	H2rename(QWidget *parent = 0, Qt::WFlags flags = 0);
++	H2rename(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+ 	~H2rename();
+ 	enum Colors {CollisionColor = 0xff0000, HighlightColor = 0xffe489, ErrorColor = 0xff0000};
+ private:
+@@ -290,7 +291,7 @@
+ 	Q_OBJECT
+ 
+ public:
+-	ReadDirProgressDialog(QWidget *parent = 0, Qt::WFlags flags = 0);
++	ReadDirProgressDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+ 
+ 	Ui::ReadDirProgressDialog ui;
+ };
+diff -Naru h2rename.old/main.cpp h2rename/main.cpp
+--- h2rename.old/main.cpp	2019-05-29 22:59:40.285731051 +0200
++++ h2rename/main.cpp	2019-05-29 22:55:55.919746711 +0200
+@@ -1,7 +1,7 @@
+ /*
+ 	This file is part of H2rename.
+ 
+-	Copyright (C) 2009 by Harald Bögeholz / c't Magazin für Computertechnik
++	Copyright (C) 2009 by Harald BÃ¶geholz / c't Magazin fÃ¼r Computertechnik
+ 	www.ctmagazin.de
+ 
+ 	This program is free software: you can redistribute it and/or modify
+@@ -18,7 +18,7 @@
+ 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
+-#include <QtGui/QApplication>
++#include <QApplication>
+ #include <QTranslator>
+ #include "h2rename.h"
+ 
