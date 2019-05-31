@@ -1,8 +1,7 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="6"
+EAPI=6
 
 PYTHON_COMPAT=( python2_7 python3_4 )
 PYTHON_REQ_USE='threads(+)'
@@ -10,12 +9,14 @@ PYTHON_REQ_USE='threads(+)'
 inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
 
 DESCRIPTION="An application for schematic capture and simulation of electrical circuits"
+HOMEPAGE="https://github.com/drahnr/oregano"
 SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
+PATCHES=( "${FILESDIR}/${P}-remove-schema-update.patch" )
 
 CDEPEND="dev-libs/libxml2:2
 	x11-libs/goocanvas:2.0
@@ -28,11 +29,6 @@ DEPEND="${CDEPEND}
 RDEPEND="${CDEPEND}
 	|| ( gnome-base/dconf gnome-base/gconf )
 	sci-electronics/electronics-menu"
-
-src_prepare() {
-	epatch "${FILESDIR}/${P}-remove-schema-update.patch"
-	eapply_user
-}
 
 src_compile() {
 	local _mywafconfig
@@ -48,6 +44,8 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
+	xdg_icon_cache_update
+	xdg_mimeinfo_database_update
 	gnome2_schemas_update
 	fdo-mime_desktop_database_update
 	elog "You'll need to emerge your prefered simulation backend"
@@ -57,5 +55,7 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+	xdg_icon_cache_update
+	xdg_mimeinfo_database_update
 	gnome2_schemas_update
 }

@@ -10,11 +10,17 @@ inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
 
 DESCRIPTION="An application for schematic capture and simulation of electrical circuits"
 HOMEPAGE="https://github.com/drahnr/oregano"
-SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+
+if [[ ${PV} == *9999* ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/drahnr/oregano.git"
+else
+	KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 CDEPEND="dev-libs/libxml2:2
@@ -29,7 +35,7 @@ RDEPEND="${CDEPEND}
 	|| ( gnome-base/dconf gnome-base/gconf )
 	sci-electronics/electronics-menu"
 
-#PATCHES=( "${FILESDIR}/${PN}-0.84.6-do-not-update-mime-db.patch" )
+PATCHES=( "${FILESDIR}/${PN}-0.84.41-do-not-update-mime-db.patch" )
 
 src_compile() {
 	local _mywafconfig

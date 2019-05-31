@@ -1,0 +1,21 @@
+diff -Naru oregano-0.84.41.old/data/wscript oregano-0.84.41/data/wscript
+--- oregano-0.84.41.old/data/wscript	2019-01-04 12:21:14.000000000 +0100
++++ oregano-0.84.41/data/wscript	2019-05-30 18:02:17.289945974 +0200
+@@ -32,17 +32,6 @@
+ 		bld.install_files (bld.env.path_partslib, bld.path.ant_glob('libraries/*.oreglib'))
+ 		bld.install_files (bld.env.path_ui, bld.path.ant_glob('xml/*.ui'))
+ 
+-		if not bld.options.no_xdg:
+-			try:
+-				bld.exec_command(['update-desktop-database', utils.subst_vars('${DATADIR}/applications', bld.env)])
+-			except:
+-				logs.warn('Failed to execute xdg desktop database update.')
+-
+-			try:
+-				bld.exec_command(['update-mime-database', utils.subst_vars('${DATADIR}/mime', bld.env)])
+-			except:
+-				logs.warn('Failed to execute xdg mime database update.')
+-
+ 	bld(
+ 		features  = 'intltool_in',
+ 		podir     = "../po",
