@@ -2,17 +2,23 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-inherit git-r3 desktop qmake-utils
+inherit desktop qmake-utils
 
 DESCRIPTION="${PN} helps to repair/rename broken charakters so called umlauts"
-HOMEPAGE="https://www.heise.de/ct/artikel/H2rename-Dateien-und-Verzeichnisse-umbenennen-292168.html"
-EGIT_REPO_URI="https://github.com/ctbo/h2rename.git"
+HOMEPAGE="https://github.com/mundis/h2rename"
+
+if [[ ${PV} == *9999* ]]; then
+	EGIT_REPO_URI="https://github.com/mundis/h2rename.git"
+	inherit git-r3
+else
+	KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://github.com/mundis/h2rename/archive/${PV}.zip -> ${P}.zip"
+fi
 
 SLOT="0"
 LICENSE="GPL-3"
 DEPEND="dev-qt/qtgui:5"
 RDEPEND="${DEPEND}"
-PATCHES=( "${FILESDIR}/H2rename-qt4-to-qt5.patch" )
 
 src_prepare() {
 	default

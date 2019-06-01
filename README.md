@@ -170,11 +170,11 @@ An application for schematic capture and simulation of electrical circuits
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sci-electronics/smartsim>sci-electronics/smartsim</a>
 </td><td>
-SmartSim is a free and open source digital logic circuit design and simulation package
+Application for the schematic capturing and simulation of electrical circuits
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-util/aptana>dev-util/aptana</a>
 </td><td>
-Eclipse IDE for building, editing and debugging HTML/CSS/JavaScript/PHP/Ruby on Rails.
+SmartSim is a free and open source digital logic circuit design and simulation package
 </td></tr>
 </table>

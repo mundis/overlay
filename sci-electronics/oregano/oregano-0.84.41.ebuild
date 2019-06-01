@@ -1,26 +1,18 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI="4"
 
-PYTHON_COMPAT=( python2_7 python3_6 )
-PYTHON_REQ_USE='threads(+)'
+inherit autotools eutils fdo-mime vcs-snapshot gnome2-utils
 
-inherit eutils fdo-mime gnome2-utils python-any-r1 waf-utils
-
-DESCRIPTION="An application for schematic capture and simulation of electrical circuits"
-HOMEPAGE="https://github.com/drahnr/oregano"
-
-if [[ ${PV} == *9999* ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/drahnr/oregano.git"
-else
-	KEYWORDS="~amd64 ~x86"
-	SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-fi
+DESCRIPTION="Application for the schematic capturing and simulation of electrical circuits"
+HOMEPAGE="https://github.com/marc-lorber/oregano"
+#SRC_URI="https://github.com/marc-lorber/${PN}/tarball/v${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/drahnr/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 CDEPEND="dev-libs/libxml2:2
@@ -29,29 +21,30 @@ CDEPEND="dev-libs/libxml2:2
 	x11-libs/gtksourceview:3.0
 	app-text/rarian"
 DEPEND="${CDEPEND}
-	${PYTHON_DEPS}
 	virtual/pkgconfig"
 RDEPEND="${CDEPEND}
 	|| ( gnome-base/dconf gnome-base/gconf )
 	sci-electronics/electronics-menu"
 
-PATCHES=( "${FILESDIR}/${PN}-0.84.41-do-not-update-mime-db.patch" )
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-format-security.patch
+	epatch "${FILESDIR}"/${P}-remove.unneeded.docs.patch
+	epatch "${FILESDIR}"/${P}-asneeded.patch
+	# Do not use GTK_DISABLE_DEPRECATED (needed by >=gtk+-3.8.1
+	sed -i -e "s/-DGTK_DISABLE_DEPRECATED//g" src/sheet/Makefile.am || die
+	sed -i -e "s/-DGTK_DISABLE_DEPRECATED//g" src/Makefile.am || die
+	sed -i -e "s/(OREGANO_LIBS)/(OREGANO_LIBS) -lm/" src/Makefile.am || die
+	# Aclocal 1.13 deprecated error #467708
+	epatch "${FILESDIR}"/${P}-automake.patch
+	eautoreconf
+}
 
-src_compile() {
-	local _mywafconfig
-	[[ "${WAF_VERBOSE}" ]] && _mywafconfig="--verbose"
-
-	local jobs="--jobs=$(makeopts_jobs)"
-	echo "\"${WAF_BINARY}\" build ${_mywafconfig} ${jobs}"
-	"${WAF_BINARY}" ${_mywafconfig} ${jobs} release || die "build failed"
+src_configure() {
+	econf --disable-update-mimedb --disable-silent-rules
 }
 
 src_install() {
-	echo "\"${WAF_BINARY}\" --destdir=\"${D}\" install"
-	"${WAF_BINARY}" --destdir="${D}" install || die "Make install failed"
-	rm "${D}"/usr/share/glib-2.0/schemas/gschemas.compiled
-
-	einstalldocs
+	emake DESTDIR="${D}" oreganodocdir=/usr/share/doc/${PF} install
 }
 
 pkg_preinst() {
@@ -59,8 +52,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	xdg_icon_cache_update
-	xdg_mimeinfo_database_update
 	gnome2_schemas_update
 	fdo-mime_desktop_database_update
 	elog "You'll need to emerge your prefered simulation backend"
@@ -70,7 +61,5 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	xdg_icon_cache_update
-	xdg_mimeinfo_database_update
 	gnome2_schemas_update
 }
