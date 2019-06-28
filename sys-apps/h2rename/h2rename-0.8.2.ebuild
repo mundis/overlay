@@ -1,10 +1,10 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 inherit desktop qmake-utils
 
-DESCRIPTION="${PN} helps to repair/rename broken charakters so called umlauts"
+DESCRIPTION="h2rename helps to repair/rename broken charakters so called umlauts"
 HOMEPAGE="https://github.com/mundis/h2rename"
 
 if [[ ${PV} == *9999* ]]; then

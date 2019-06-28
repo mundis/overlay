@@ -33,19 +33,9 @@ Patched Version of squashfs-tools for use with zenity-progress
 vmfs-tools allows to access VMFS through the standard Linux VFS with the help of the FUSE framework
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/net-print/cndrvcups-common>net-print/cndrvcups-common</a>
-</td><td>
-Common files for the Canon CUPS Capt driver
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/net-print/samsung-unified-driver>net-print/samsung-unified-driver</a>
 </td><td>
 Samsung Unified Linux Driver for printers and MFDs
-</td></tr>
-<tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/net-print/cndrvcups-capt>net-print/cndrvcups-capt</a>
-</td><td>
-Canon CUPS Capt driver
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/app-crypt/samdump2>app-crypt/samdump2</a>
@@ -70,7 +60,7 @@ Patched version of dd with features intended for forensic acquisition of data
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/sys-apps/h2rename>sys-apps/h2rename</a>
 </td><td>
-${PN} helps to repair/rename broken charakters so called umlauts
+h2rename helps to repair/rename broken charakters so called umlauts
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/games-emulation/python-lhafile>games-emulation/python-lhafile</a>
