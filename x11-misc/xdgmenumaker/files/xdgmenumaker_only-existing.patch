@@ -1,0 +1,33 @@
+diff --git i/src/xdgmenumaker w/src/xdgmenumaker
+index 143406a..3c5825d 100755
+--- i/src/xdgmenumaker
++++ w/src/xdgmenumaker
+@@ -165,6 +165,19 @@ def icon_full_path(icon):
+ 			icon = icon.get_filename()
+ 		return icon
+ 
++def exists_in_path(filename):
++	exists = False
++
++	if filename.startswith("/"):
++		exists = os.path.exists(filename)
++	else:
++		for path in os.path.expandvars("${PATH}").split(":"):
++			if os.path.exists(os.path.join(path, filename)):
++				exists = True
++				break
++
++	return exists
++
+ def get_entry_info(desktopfile):
+ 	global desktop
+ 	global seticon
+@@ -188,6 +201,8 @@ def get_entry_info(desktopfile):
+ 
+ 	# removing any %U or %F from the exec line
+ 	command = de.getExec().partition('%')[0]
++	if not exists_in_path(command.split()[0]):
++		show = False
+ 
+ 	terminal = de.getTerminal()
+ 	if terminal is True:

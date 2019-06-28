@@ -108,6 +108,11 @@ Kupfer, a convenient command and access tool
 slap is 'Smart Label Printer' command line program
 </td></tr>
 <tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/x11-misc/xdgmenumaker>x11-misc/xdgmenumaker</a>
+</td><td>
+Command line tool that generates XDG menus for several window managers
+</td></tr>
+<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/x11-misc/opensnap>x11-misc/opensnap</a>
 </td><td>
 Opensnap brings the Aero Snap feature to Openbox

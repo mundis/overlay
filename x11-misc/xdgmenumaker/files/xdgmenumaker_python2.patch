@@ -1,0 +1,10 @@
+diff --git i/src/xdgmenumaker w/src/xdgmenumaker
+index 143406a..3c1f449 100755
+--- i/src/xdgmenumaker
++++ w/src/xdgmenumaker
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import os
+ import sys

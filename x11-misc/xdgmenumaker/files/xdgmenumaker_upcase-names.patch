@@ -1,0 +1,20 @@
+diff --git i/src/xdgmenumaker w/src/xdgmenumaker
+index 143406a..f36178f 100755
+--- i/src/xdgmenumaker
++++ w/src/xdgmenumaker
+@@ -4,6 +4,7 @@ import os
+ import sys
+ import getopt
+ import gtk
++import re
+ import xdg.DesktopEntry as dentry
+ import xdg.Exceptions as exc
+ import xdg.BaseDirectory as bd
+@@ -171,6 +172,7 @@ def get_entry_info(desktopfile):
+ 	show = True
+ 	de = dentry.DesktopEntry(filename = desktopfile)
+ 	name = de.getName().encode('utf-8')
++	name = re.sub('([a-zA-Z])', lambda x: x.groups()[0].upper(), name, 1)
+ 
+ 	if seticon == True:
+ 		# strip the directory and extension from the icon name

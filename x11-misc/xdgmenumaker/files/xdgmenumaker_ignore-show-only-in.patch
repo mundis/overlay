@@ -1,0 +1,16 @@
+diff --git i/src/xdgmenumaker w/src/xdgmenumaker
+--- i/src/xdgmenumaker
++++ w/src/xdgmenumaker
+@@ -226,12 +243,7 @@ def get_entry_info(desktopfile):
+ 	else:
+ 		category = other
+ 
+-	onlyshowin = de.getOnlyShowIn()
+ 	notshowin = de.getNotShowIn()
+-	# none of the freedesktop registered environments are supported by this anyway
+-	# http://standards.freedesktop.org/menu-spec/latest/apb.html
+-	if onlyshowin != []:
+-		show = False
+ 	if desktop in notshowin:
+ 		show = False
+ 	if show == True:
