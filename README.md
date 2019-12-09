@@ -1,16 +1,3 @@
-Adding the overlay
-------------------
-To add this overlay to your system:  
-uncomment in: `/etc/layman/layman.cfg` the line  
-`# overlay_defs : /etc/layman/overlays` to  
-`overlay_defs : /etc/layman/overlays`  
-and use the following commands  
-`wget -P /etc/layman/overlays/ https://raw.github.com/mundis/overlay/master/mundis.xml`  
-`layman -L`  
-`layman -a mundis`
-
-##### All ebuilds into the overlay:  
-
 <table>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-embedded/cc65>dev-embedded/cc65</a>
@@ -121,6 +108,11 @@ A Steganography detector for JPEG
 <a href=https://github.com/mundis/overlay/tree/master/app-forensics/air>app-forensics/air</a>
 </td><td>
 A GUI front-end to dd/dc3dd
+</td></tr>
+<tr><td>
+<a href=https://github.com/mundis/overlay/tree/master/app-forensics/magicrescue>app-forensics/magicrescue</a>
+</td><td>
+Find deleted files in block devices
 </td></tr>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-python/python-zenity>dev-python/python-zenity</a>
