@@ -110,11 +110,6 @@ A Steganography detector for JPEG
 A GUI front-end to dd/dc3dd
 </td></tr>
 <tr><td>
-<a href=https://github.com/mundis/overlay/tree/master/app-forensics/magicrescue>app-forensics/magicrescue</a>
-</td><td>
-Find deleted files in block devices
-</td></tr>
-<tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-python/python-zenity>dev-python/python-zenity</a>
 </td><td>
 ${PN} is a library for python inspired by zenity
