@@ -1,3 +1,16 @@
+Adding the overlay
+------------------
+To add this overlay to your system:  
+uncomment in: `/etc/layman/layman.cfg` the line  
+`# overlay_defs : /etc/layman/overlays` to  
+`overlay_defs : /etc/layman/overlays`  
+and use the following commands  
+`wget -P /etc/layman/overlays/ https://raw.github.com/mundis/overlay/master/mundis.xml`  
+`layman -L`  
+`layman -a mundis`
+
+##### All ebuilds into the overlay:  
+
 <table>
 <tr><td>
 <a href=https://github.com/mundis/overlay/tree/master/dev-embedded/cc65>dev-embedded/cc65</a>
