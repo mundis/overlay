@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-inherit git-2
+inherit git-r3
 
 DESCRIPTION="slap is 'Smart Label Printer' command line program"
 EGIT_REPO_URI="https://github.com/mundis/slap.git"

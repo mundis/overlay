@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 EAPI="5"
-inherit linux-mod git-2 user
+inherit linux-mod git-r3 user
 EGIT_REPO_URI="https://github.com/iperry/blackmagic.git"
 DESCRIPTION="Blackmagic Software and Driver"
 SLOT="0"
